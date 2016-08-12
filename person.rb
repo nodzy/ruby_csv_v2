@@ -17,7 +17,7 @@ class Person
     CSV.new(file, headers: true).each do |row|
       row = row.to_h
       row = row.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
-	    rows << row
+      rows << row
     end
     rows.map do |row|
       Person.new(row)
